@@ -1,7 +1,9 @@
-# Pidgeon Messenger - Powered by ESP32 & RA-02
+# Pigeon Messenger - Powered by ESP32 & RA-02
 Source code, board schematic and files, 3D print model, tips and instructions
 
-Todo
+![Preview](https://i.imgur.com/q8fRszX.jpg)
+
+## Todo
 - [ ] Board schematic.
 - [ ] Write code.
 - [ ] Basic web interface
@@ -13,7 +15,7 @@ Todo
 - [ ] Storing messages on flash
 
 ## License
-Licens is GPL v3, translated into English:
+Licens is GPL v3, translated into simple English:
 1.  Anyone can copy, modify and distribute this software.
 2. You have to include the license and copyright notice with each and every distribution.
 3. You can use this software privately.
