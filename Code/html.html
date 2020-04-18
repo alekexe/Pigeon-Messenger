@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Penguin Messenger</title>
+</head>
+
+<style>
+    * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+    outline: none !important;
+} 
+    body {
+        font-family: "Arial";
+        font-weight: normal;
+        margin: 0px;
+        background-color: #000;
+        color: white;
+    }
+    
+    section {
+        max-width: 750px;
+        margin: 50px auto;
+        padding: 0px 20px;
+    }
+    
+    h1{text-align: center; color: #fff; height: 30px; margin: 0px}
+    
+    .s{
+     -webkit-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.12);
+-moz-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.12);
+box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.12);
+    }
+    
+    section div {
+        max-width: 255px;
+        word-wrap: break-word;
+        margin-bottom: 12px;
+    }
+    
+    section div:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .clear {
+        clear: both;
+    }
+    
+    .TX {
+        position: relative;
+        padding: 10px 20px;
+        background: #0084ff;
+        border-radius: 25px 25px 3px 25px;
+        float: right;
+        
+    }
+    
+    
+    .RX {
+        position: relative;
+        padding: 10px 20px;
+        background: #333333;
+        border-radius: 3px 25px 25px 25px;
+        float: left;
+        color: #fff;
+    }
+    
+    
+   p {
+    display: block;
+    margin: 0px
+}
+    
+form {
+  display:flex;
+  flex-direction:row;
+  padding: 0px
+}
+
+input {
+  flex-grow:2;
+  border:none;
+  padding: 3px 15px;
+  height: 35px;
+     border-radius: 17.5px;
+    background-color: #333333;
+    color: #fff;
+}
+
+
+.send {
+  background: #0084ff;
+    margin-left: 10px;
+    margin-right: 40px;
+    height: 35px;
+    width: 35px;
+    font-size: 13px;
+    border-radius: 17.5px;
+    border: none;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAq9QTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////J9QBRAAAAOV0Uk5TAAECAzmx7d5BBwQGBQgnpvb/1QoJCyaP9PkWdN3+7EvKzDe3qRec93sZZvJKVtrP6SX12RyM87sbbNubT8d3NrYdmRKF6w9n38vNqiORifH8aRTm0/hJDlDCofsqPL39eNgTnoRf+r6CU1JhL3nIRVpAljE/H3MicOJM18kQ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');
+    color: #fff;
+    background-position: 39% 47%;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+    
+    .reload {
+  background: #0084ff;
+    margin-right: 10px;
+    height: 35px;
+    width: 35px;
+    font-size: 13px;
+    border-radius: 17.5px;
+    border: none;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAActQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Sem/EQAAAJl0Uk5TAC05A0pVn6rU//y7fTaAFNBxKwcOtRVjsOjcjkcNPcbq4RNO+Fih+9rBvoE3GYjxW/1Av8J/yRe4meXu1aZ7KP4RQRwGKV7Zw+PPM/bSh0WkIiOclR66Q5Nf+c4h9WBSxJbd3vdP7zUJG2l0TApRtAXMooSJJwTYrXkP66cavWUqsXebCGY7es3nJdddCwLIroKgMuTTEJ1IErQa/gAABDpJREFUeJztmudD00AUwEshnCk02FCKtCgoYFWQAFUZFkGLhYoLceBERRy4F6KgICpOVNx/rmmLtcl7t2Lhi/w+5r3Lj8uN5F5xuVb438hzS6XnFyiFhKxSk3iKCClWvPxGmqoIC0rc2moVgfj0UkYzf5kqKgmUr6nADGmCocq1lIbrqlRBiV5WTTekWR/agLWsqVXFJHVFPEOakA6abgyrQpK6TWKKJMQ6jbybF69zJN4t4ook9YG/bRsyz5gp2dpoyDnMsWn6M9W05sxFlqQlKKtIEkm1DWzLusSQbHeiMDHMkcnbkX2FKmltc+gw94J2n/UCTaJ3OHZAKBK39IjLS1py6sAlue0HLqnMsQOT+Hcy8o1op7YrldZVrBVt6nYo2V1FTQ5qe2KW3J695YS7QWOSTlpqxI2+nALxXmlJnJLYx3jRKgk5CWVi7eunK5L49stIDqBZB9kKE+YmZJM0YTnBQzxF4DDLYZMMYLO3+gjPMcB5J1glg0hGIka5dQaFt3gtkhiSHeU5/IUchU1yFMaDAdrNFzl2nOuwSHQYNk5wHHsEFrxFMgTDJzmOg6cEHBZJAkT72Ar/RhGFRVIAgpyJ1Q//Kq7kNAj6mI4aQUW25MxZe6yaNbP87bUOJOdALMTqh39YOy8vuWAPeZgPK4WuNJKLMpKoPdTOl6TxKkNkREgycMkeGhWVpIlrRdHLHMkVELoqJ0lyTR8zVeAFlpGAba5N3rHIgH5d60AlxC456liS5kZdIfHYJGCSwBOgA27eUsjtcEZidzR35UJiwy7pvbMMkugSOFYkK5I0IzeXQZKbFW/jrl3SsAQSsEHeWwLJ/eUYefiNyv2al6cEFDLHci9xgXqs81cjnQfgeXEOozRiD8epMTeQEGcSI/xo4vETPNY6aZcYjoZ+saA2MqVgy7kddGXKgeNpIvtZaEq+NZwHJGq5vAQs6mfTljj4UFUr/LKOGvitX29JKIddGZR06PBE3zxjySiBElWTkyBlLPscRbqiTqM3w/GDAVHh7hTAzsvivxWVPkeawwc+i2QZ8R7BfmCOMFwspVhFqfuFkOMlWlZ8hWR6sUR1jcDSn0OrOBfRNRBCLRWvOSeiGFZfMqnE0ym11AglPUVpHTgLptlFaTBDK161KZTlH/O9oTSpon5W0QsNiUFkX71RRi2pvX1H73wj1aKq78mH4fk/iVuVWcKoEhnMFUYZxCy6RyY93CRs9kpZBGBXf8zZIljHYlDLc7hcH/HlIoHQ6+7fnpiH348Us8zqO5uE8PFcp1Rj+HzilXmzuPY57ERhLLD+BwAwHmf98EQhIv3dGZsQ+9EqQ6J4nn9XgP5FQmGEWh0oksxtESybGkRiwAFfB7/xFd8X/vXQ9GM4wlb87JeaUjRiY52UufY+NOqgXEmlxHyBkKzF842QpoJ8fjtn9PyaW6pbr5DiN0cD7MwTlEuXAAAAAElFTkSuQmCC');
+    color: #fff;
+    background-position: 39% 47%;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+    .bar{width: 100%;height: 38px;background-color: #000;bottom: 0px;position: fixed;padding: 5px 20px;}
+
+    .msg:last-child {
+  margin-bottom: 70px;
+}
+    
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #555;
+  opacity: 1; /* Firefox */
+}
+    
+    </style>
+
+<body>
+    <section>
+        <div class="TX msg s">
+            <p>This message is sent on phone A</p>
+        </div>
+        <div class="clear"></div>
+        <div class="RX msg s">
+            <p>This message is sent on phone B</p>
+        </div>
+        <div class="clear"></div>
+        <div class="TX msg s">
+            <p>Messages are transmitted by long range radio signal..</p>
+        </div>
+<div class="clear"></div>
+        <div class="RX msg s">
+            <p>...by very affordable and reliable devices</p>
+        </div>
+        <div class="clear"></div>
+          <div class="TX msg s">
+            <p>Sed volutpat suscipit orci malesuada volutpat. Fusce sed tempor metus. Nam malesuada arcu euismod iaculis iaculis. Donec consequat molestie vulputate. Fusce vestibulum purus quis sem viverra, eget feugiat est condimentum. </p>
+        </div>
+<div class="clear"></div>
+        <div class="RX msg s">
+            <p>Cras est arcu, cursus condimentum aliquam nec, pharetra ut nulla. Donec convallis, turpis non pharetra ullamcorper, ligula enim porttitor dolor, id suscipit sapien dolor non mauri</p>
+        </div>
+<div class="clear"></div>
+          <div class="TX msg s">
+            <p>Sed volutpat suscipit orci malesuada volutpat. Fusce sed tempor metus. Nam malesuada arcu euismod iaculis iaculis. Donec consequat molestie vulputate. Fusce vestibulum purus quis sem viverra, eget feugiat est condimentum. </p>
+        </div>
+<div class="clear"></div>
+        <div class="RX msg s">
+            <p>Cras est arcu, cursus condimentum aliquam nec, pharetra ut nulla. Donec convallis, turpis non pharetra ullamcorper, ligula enim porttitor dolor, id suscipit sapien dolor non mauri</p>
+        </div>
+        <div class="clear"></div>
+          <div class="TX msg s">
+            <p>Sed volutpat suscipit orci malesuada volutpat. Fusce sed tempor metus. Nam malesuada arcu euismod iaculis iaculis. Donec consequat molestie vulputate. Fusce vestibulum purus quis sem viverra, eget feugiat est condimentum. </p>
+        </div>
+<div class="clear"></div>
+        <div class="RX msg s">
+            <p>Cras est arcu, cursus condimentum aliquam nec, pharetra ut nulla. Donec convallis, turpis non pharetra ullamcorper, ligula enim porttitor dolor, id suscipit sapien dolor non mauri</p>
+        </div>
+        <div class="clear"></div>
+          <div class="TX msg s">
+            <p>Sed volutpat suscipit orci malesuada volutpat. Fusce sed tempor metus. Nam malesuada arcu euismod iaculis iaculis. Donec consequat molestie vulputate. Fusce vestibulum purus quis sem viverra, eget feugiat est condimentum. </p>
+        </div>
+<div class="clear"></div>
+        <div class="RX msg s">
+            <p>Cras est arcu, cursus condimentum aliquam nec, pharetra ut nulla. Donec convallis, turpis non pharetra ullamcorper, ligula enim porttitor dolor, id suscipit sapien dolor non mauri</p>
+        </div>
+        
+    
+    </section>
+     <div class="bar">
+         <form>
+             <button class="reload"></button>
+  <input placeholder="Aa" class="s"/>
+  <button class="send"></button>
+             
+</form>
+    </div>
+</body>
+
+</html>
