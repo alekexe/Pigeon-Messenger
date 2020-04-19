@@ -4,10 +4,7 @@ Source code, board schematic and files, 3D print model, tips and instructions
 ![Preview](https://i.imgur.com/q8fRszX.jpg)
 
 ## Todo
-- [ ] Board schematic.
-- [ ] Write code.
-- [ ] Basic web interface
-- [ ] Better web interface, mobile first
+- [ ] Hello world on 10km
 - [ ] Instructions
 - [ ] 3D print model
 - [ ] WiFi options
