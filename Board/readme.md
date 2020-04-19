@@ -1,16 +1,29 @@
-﻿# LoRa-Messenger – ESP32 & RA-02
-##### Board
+# Pigeon Messenger - Board
 
+### Do I really need it?
+Lets make things clear - **you do not have to use this board**!  You can wire it up following the wiring scheme below, but if you want a visually apealing project with a 3D printed case(which will be made soon), you should use this board. 
 
-To use code from this repository you do not have to make this board, you can modify it, make your own or even make a DIY board or just connect the module to the ESP32 by wires, but if you want a clean finished product, I suggest ordering the board. 
+You can use services like PCBWay or EasyEDA to develop your board for only few euros, shipping included, just send them the greber file, select few options, pay and that is it. (Currently it is 30pcs for 6eur/7usd)
 
-You can use services like PCBWay or EasyEDA to develop your board for only few euros, shipping included, just send them the greber file, select few options, pay and that is it.
-
+## Board files and preview
+![Board](https://raw.githubusercontent.com/alekexe/Pigeon-Messenger/master/Board/boardv1.jpg)
+  
 All files needed for continuing development or ordering are in your arms reach.
-
-
 You can also use these links to quickly change something
+  
+[Open board on EasyEDA](https://easyeda.com/editor#id=|e8215d5b9f854c34b7a596d26bd5ad1b)
 
-##### Links
-[Edit the board][https://easyeda.com/editor#id=|70f8a288074b4b648129ad677e11ee4c|682cca2ab1af40648faddf9a976f6c13|e2dee15cd90e471bad039ab0e33c5a71]
+## Instalation
+1.Put the board on back of the ESP32, all pins going through the holes on the board. 
+  
+2.The USB port should go over the boards mark.
 
+3.Solder the GPIO pins going through the holes.
+ 
+4.Put the RA-02 on the board, the antenna conntector should go over the antenna on the board.
+
+5.Solder the RA-02 onto the board. You are done with hardware. :) Now you can flash the software and start using it.
+
+## Wiring scheme
+If you do not want to use the board, follow this wiring scheme
+![Wiring](https://raw.githubusercontent.com/alekexe/Pigeon-Messenger/master/Board/boardv1wiring.png)
